@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	<table class="table">
+		<tr th:each="contentList:${contentList}">
+			<td><a th:href="@{${contentList.videoString}}"><img th:attr="src=${contentList.imgString}" height="40" width="40"></a></td>
+			<td><a word-break: break-all th:href="@{${contentList.videoString}}" th:text="${contentList.txtString}"></a></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><a href="/contentList/">点击查看更多</a></td>
+		</tr>
+	</table>
+</body>
+</html>
