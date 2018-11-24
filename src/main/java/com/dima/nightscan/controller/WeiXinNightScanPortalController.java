@@ -34,7 +34,7 @@ public class WeiXinNightScanPortalController {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping(RequestUrl.NIGTH_SCAN_PORTAL_URL)
+	@RequestMapping(value = {RequestUrl.NIGTH_SCAN_PORTAL_URL, RequestUrl.EMPTY_URL})
 	public String portalNightScan(HttpServletRequest request, HttpServletResponse response) {
 		log.info("portalNightScan入口参数打印：" + RequestUtils.getRequestParamts(request));
 		boolean wechat = RequestUtils.isWechat(request);

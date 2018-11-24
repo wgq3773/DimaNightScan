@@ -11,8 +11,8 @@ public class DimaNightScanApplication {
 	private static Log log = LogFactory.getLog(DimaNightScanApplication.class);
 
 	public static void main(String[] args) {
-		log.info("开始启动DimaNightScanApplication......");
+		log.info("DimaNightScanApplication开始启动............");
 		SpringApplication.run(DimaNightScanApplication.class, args);
-		log.info("DimaNightScanApplication启动完成!!!!!!");
+		log.info("DimaNightScanApplication启动完成!!!!!!!!!!!!");
 	}
 }
