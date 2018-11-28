@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>支付跳转中</title>
+</head>
+<body onload="document.forms[0].submit();">
+	<form id=form1 name=form1 action="https://bufpay.com/api/pay/93073" method=post>
+	<!-- 两种方式从map中获取值 -->
+	<!-- <input type=hidden name="pay_type" th:value="${paramsMap['pay_type']}">
+	<input type=hidden name="price" th:value="${paramsMap.price}"> -->
+	
+	<input type=hidden name="name" th:value="${paramsMap['name']}">
+	<input type=hidden name="pay_type" th:value="${paramsMap['pay_type']}">
+	<input type=hidden name="price" th:value="${paramsMap['price']}">
+	<input type=hidden name="order_id" th:value="${paramsMap['order_id']}">
+	<input type=hidden name="order_uid" th:value="${paramsMap['order_uid']}">
+	<input type=hidden name="notify_url" th:value="${paramsMap['notify_url']}">
+	<input type=hidden name="return_url" th:value="${paramsMap['return_url']}">
+	<input type=hidden name="feedback_url" th:value="${paramsMap['feedback_url']}">
+	<input type=hidden name="sign" th:value="${paramsMap['sign']}">
+</body>
+</html>

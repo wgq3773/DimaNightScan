@@ -41,6 +41,13 @@
 			</exclusions>
 		</dependency>
 		
+		<!-- 依耐DubboApi -->
+		<dependency>
+			<groupId>DimaApi</groupId>
+			<artifactId>DimaApi</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
 		<!-- DimaCommonUtils -->
 		<dependency>
 			<groupId>DimaCommonUtils</groupId>

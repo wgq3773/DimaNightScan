@@ -12,10 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dima.commons.constant.PropertiesFilePath;
+import com.dima.commons.constant.RequestUrl;
 import com.dima.commons.utils.PropertiesUtils;
 import com.dima.commons.utils.RequestUtils;
 import com.dima.nightscan.pojo.ContentPOJO;
-import com.dima.nightscan.urlConstant.RequestUrl;
 
 /**
  * <p>
@@ -33,8 +34,6 @@ public class WeiXinNightScanPortalController {
 	
 	private static Log log = LogFactory.getLog(WeiXinNightScanPortalController.class);
 	
-	private static String CONFIG_PATH = "commonProperties/uuid.properties";
-	
 	@RequestMapping(value = RequestUrl.CONTENT_LIST_URL)
 	public ModelAndView contentList(HttpServletRequest request, HttpServletResponse response){
 		log.info("内容列表入口参数打印：" + RequestUtils.getIpAddress(request) + "---" +RequestUtils.getRequestParamts(request));
@@ -49,7 +48,7 @@ public class WeiXinNightScanPortalController {
         List<ContentPOJO> contentList = new ArrayList<ContentPOJO>();
         for (int i = 0; i < 23; i++) {
         	ContentPOJO content = new ContentPOJO();
-        	String uuidString= PropertiesUtils.getProperty(CONFIG_PATH, String.valueOf(i % 10));
+        	String uuidString= PropertiesUtils.getProperty(PropertiesFilePath.UUID_FILE_PATH, String.valueOf(i % 10));
         	content.setTxtString(uuidString);
         	content.setImgString("/images/" + uuidString + ".gif");
         	content.setVideoString("/images/" + uuidString + ".gif");
