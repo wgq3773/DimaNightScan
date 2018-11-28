@@ -2,7 +2,6 @@ package com.dima.nightscan.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -50,15 +49,13 @@ public class WeiXinNightScanPortalController {
         List<ContentPOJO> contentList = new ArrayList<ContentPOJO>();
         for (int i = 0; i < 23; i++) {
         	ContentPOJO content = new ContentPOJO();
-        	content.setImgString("/images/accd03ed5d7a442990f5d30ff41df0c6.png");
-        	int nextInt = new Random().nextInt(100);
-        	String uuidName = PropertiesUtils.getProperty(CONFIG_PATH, String.valueOf(nextInt));
-        	content.setTxtString(uuidName);
-        	content.setVideoString("/videos/accd03ed5d7a442990f5d30ff41df0c6.mp4");
+        	String uuidString= PropertiesUtils.getProperty(CONFIG_PATH, String.valueOf(i % 10));
+        	content.setTxtString(uuidString);
+        	content.setImgString("/images/" + uuidString + ".gif");
+        	content.setVideoString("/images/" + uuidString + ".gif");
         	contentList.add(content);
 		}
         mv.addObject("contentList", contentList);
-        
         mv.setViewName("contentList");
 		return mv;
 	}
