@@ -38,11 +38,11 @@ public class WeiXinNightScanPortalController {
 	public ModelAndView contentList(HttpServletRequest request, HttpServletResponse response){
 		log.info("内容列表入口参数打印：" + RequestUtils.getIpAddress(request) + "---" +RequestUtils.getRequestParamts(request));
 		ModelAndView mv = new ModelAndView();
-		Boolean fromMobile = RequestUtils.isFromMobile(request);
-		if (!fromMobile) {
-			mv.setViewName("isNotFromMobile");
-			return mv;
-		}
+//		Boolean fromMobile = RequestUtils.isFromMobile(request);
+//		if (!fromMobile) {
+//			mv.setViewName("isNotFromMobile");
+//			return mv;
+//		}
 		
 		// contentList
         List<ContentPOJO> contentList = new ArrayList<ContentPOJO>();

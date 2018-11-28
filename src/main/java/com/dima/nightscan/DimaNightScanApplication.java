@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @EnableWebMvc
 @SpringBootApplication
-@ImportResource("classpath:applicationContext-NightScan.xml")
+@ImportResource("classpath:applicationContext-*.xml")
 public class DimaNightScanApplication {
 
 	private static Log log = LogFactory.getLog(DimaNightScanApplication.class);
