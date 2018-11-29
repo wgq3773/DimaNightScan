@@ -6,8 +6,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,10 +32,11 @@ import com.dima.nightscan.pojo.ContentPOJO;
 @Controller
 public class WeiXinNightScanPortalController {
 	
-	private static Log log = LogFactory.getLog(WeiXinNightScanPortalController.class);
+	private static Logger log = LoggerFactory.getLogger(WeiXinNightScanPortalController.class);
 	
 	@RequestMapping(value = RequestUrl.CONTENT_LIST_URL)
 	public ModelAndView contentList(HttpServletRequest request, HttpServletResponse response){
+		//内容列表入口参数打印：0:0:0:0:0:0:0:1---{accept-language=zh-CN,zh;q=0.9, host=localhost:8087, upgrade-insecure-requests=1, connection=keep-alive, accept-encoding=gzip, deflate, br, user-agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36, accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8}
 		log.info("内容列表入口参数打印：" + RequestUtils.getIpAddress(request) + "---" +RequestUtils.getRequestParamts(request));
 		ModelAndView mv = new ModelAndView();
 //		Boolean fromMobile = RequestUtils.isFromMobile(request);

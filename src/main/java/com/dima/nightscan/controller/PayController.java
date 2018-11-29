@@ -2,8 +2,8 @@ package com.dima.nightscan.controller;
 
 import java.util.Date;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +18,7 @@ import com.dima.commons.utils.CommonUtils;
 @Controller
 public class PayController {
 	
-	private static Log log = LogFactory.getLog(PayController.class);
+	private static Logger log = LoggerFactory.getLogger(PayController.class);
 	
 	@Autowired
 	private PayService payService;
@@ -32,7 +32,7 @@ public class PayController {
 		order.setOrderMoney("0.02");
 		order.setOrderUserId(order.getOrderId());
 		PayResponse payResponse = payService.pay(order);
-		log.info(payResponse);
+		log.info(payResponse.toString());
 		model.addAttribute("paramsMap", payResponse.getParam());
 		return "pay";
 	}
